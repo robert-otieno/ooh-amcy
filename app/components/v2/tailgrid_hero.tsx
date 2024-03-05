@@ -8,7 +8,7 @@ const TailGridHero = () => {
         <div className='-mx-4 flex flex-wrap'>
           <div className='w-full px-4 lg:w-5/12'>
             <div className='hero-content'>
-              <h1 className='mx-auto max-w-4xl font-sans text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl mb-5  !leading-[1.208] dark:text-white sm:text-[42px] lg:text-[40px] xl:text-5xl'>
+              <h1 className='mx-auto max-w-4xl text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl mb-5  !leading-[1.208] dark:text-white sm:text-[42px] lg:text-[40px] xl:text-5xl'>
                 Digital{" "}
                 <span className='relative whitespace-nowrap text-primary'>
                 <svg aria-hidden='true' viewBox='0 0 418 42' className='absolute left-0 top-2/3 h-[0.58em] w-full fill-red-300/70' preserveAspectRatio='none'>
