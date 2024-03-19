@@ -4,20 +4,19 @@ export default function GetStarted() {
   return (
     <div className='relative bg-white pb-[110px] pt-[120px] dark:bg-dark lg:pt-[150px]'>
       <div className='container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8'>
+        <div className='mx-auto lg:mx-0 pb-12'>
+          <h2 id='faq-title' className='font-display text-lg tracking-tight text-slate-900 sm:text-4xl'>
+            Introduction: Why should I use this platform?
+          </h2>
+          <p className='mt-4 text-base font-light leading-6 text-slate-600'>
+            Amcy OOH, specializes in helping businesses reach their target audience through disruptive and eye-catching Out of Home advertising. Our services are designed to captivate consumers in
+            their everyday environments, making your brand message stick. Join the community of businesses benefiting from our OOH solutions and let us help you create impactful campaigns.
+          </p>
+        </div>
         <div className='mx-auto max-w-2xl md:text-center'>
           <h2 className='font-display text-3xl tracking-tight text-slate-900 sm:text-4xl'>Get Started with Amcy OOH</h2>
           <p className='mt-4 text-lg tracking-tight text-slate-700'>
             Thank you for your interest in Amcy OOH! Please provide us with the following information so that we can assist you in executing innovative Out of Home (OOH) ad campaigns.{" "}
-          </p>
-        </div>
-
-        <div className='mx-auto mt-16 lg:mx-0'>
-          <h2 id='faq-title' className='font-display text-lg tracking-tight text-slate-900 sm:text-4xl'>
-            Why should I use this platform?
-          </h2>
-          <p className='mt-4 font-light tracking-tight text-slate-600'>
-            At Amcy OOH, we specialize in helping businesses reach their target audience through disruptive and eye-catching Out of Home advertising. Our services are designed to captivate consumers
-            in their everyday environments, making your brand message stick. Join the community of businesses benefiting from our OOH solutions and let us help you create impactful campaigns.
           </p>
         </div>
 
@@ -140,7 +139,15 @@ export default function GetStarted() {
                   <legend className='text-sm font-semibold leading-6 text-slate-900'>Send information about</legend>
                   {/* <p className='mt-1 text-sm leading-6 text-slate-600'>These are delivered via SMS to your mobile phone.</p> */}
                   <div className='mt-6 space-y-2'>
-                    {items.map((item, idx) => (
+                    {[
+                      "Industry-relevant Case Studies",
+                      "Pricing",
+                      "Campaign and Advertising Options",
+                      "Advertising Campaign Add-ons",
+                      "More Information about Amcy OOH",
+                      "Send me Everything",
+                      "Let's schedule a time to chat",
+                    ].map((item, idx) => (
                       <div key={idx} className='flex items-center gap-x-3'>
                         <div className='flex h-6 items-center'>
                           <input id={`item-${idx}`} type='checkbox' className='h-4 w-4 rounded border-slate-300 text-[#e10000] focus:ring-[#e10000]' />
@@ -230,13 +237,3 @@ export default function GetStarted() {
     </div>
   );
 }
-
-const items = [
-  "Industry-relevant Case Studies",
-  "Pricing",
-  "Campaign and Advertising Options",
-  "Advertising Campaign Add-ons",
-  "More Information about Amcy OOH",
-  "Send me Everything",
-  "Let's schedule a time to chat",
-];
