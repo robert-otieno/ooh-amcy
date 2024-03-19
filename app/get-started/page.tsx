@@ -38,7 +38,7 @@ export default function GetStarted() {
                       name='first-name'
                       id='first-name'
                       autoComplete='given-name'
-                      className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+                      className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
@@ -53,7 +53,7 @@ export default function GetStarted() {
                       name='last-name'
                       id='last-name'
                       autoComplete='family-name'
-                      className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+                      className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
@@ -68,7 +68,7 @@ export default function GetStarted() {
                       name='email'
                       type='email'
                       autoComplete='email'
-                      className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+                      className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
@@ -83,7 +83,7 @@ export default function GetStarted() {
                       name='first-name'
                       id='first-name'
                       autoComplete='given-name'
-                      className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+                      className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
@@ -98,7 +98,7 @@ export default function GetStarted() {
                       name='last-name'
                       id='last-name'
                       autoComplete='family-name'
-                      className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+                      className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
@@ -113,7 +113,7 @@ export default function GetStarted() {
                   <div className='mt-6 space-y-2 grid grid-cols-1 gap-x-6 sm:grid-cols-6'>
                     {["General", "Government", "Healthcare", "Higher Education", "Legal", "Pharmaceuticals", "Technology and Software", "Tourism", "E-commerce", "Fashion Store"].map((item, idx) => (
                       <div key={idx} className='flex items-center gap-x-3 sm:col-span-2'>
-                        <input id='push-everything' name='push-notifications' type='radio' className='h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-600' />
+                        <input id='push-everything' name='push-notifications' type='radio' className='h-4 w-4 border-slate-300 text-[#e10000] focus:ring-[#e10000]' />
                         <label htmlFor='push-everything' className='font-light leading-6 text-slate-600'>
                           {item}
                         </label>
@@ -131,7 +131,7 @@ export default function GetStarted() {
                       id='other-industry'
                       name='other-industry'
                       type='text'
-                      className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+                      className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
@@ -143,7 +143,7 @@ export default function GetStarted() {
                     {items.map((item, idx) => (
                       <div key={idx} className='flex items-center gap-x-3'>
                         <div className='flex h-6 items-center'>
-                          <input id={`item-${idx}`} type='checkbox' className='h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-600' />
+                          <input id={`item-${idx}`} type='checkbox' className='h-4 w-4 rounded border-slate-300 text-[#e10000] focus:ring-[#e10000]' />
                         </div>
                         <div className='leading-6'>
                           <label htmlFor={`item-${idx}`} className='font-light leading-6 text-slate-600'>
@@ -161,7 +161,7 @@ export default function GetStarted() {
                   <div className='mt-6 space-y-2'>
                     {["Mall Media Advertising", "Instore Media Advertising", "Street Digital Out-of-Home Advertising", "Residential and Commercial Building Advertising"].map((item, idx) => (
                       <div key={idx} className='flex items-center gap-x-3'>
-                        <input id='push-everything' name='push-notifications' type='radio' className='h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-600' />
+                        <input id='push-everything' name='push-notifications' type='radio' className='h-4 w-4 border-slate-300 text-[#e10000] focus:ring-[#e10000]' />
                         <label htmlFor='push-everything' className='font-light leading-6 text-slate-600'>
                           {item}
                         </label>
@@ -181,14 +181,14 @@ export default function GetStarted() {
                     name='email'
                     type='email'
                     autoComplete='email'
-                    className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+                    className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                   />
                 </div>
               </div>
 
               <div className='flex items-center gap-x-3 mt-4'>
                 <div className='flex h-6 items-center'>
-                  <input id='' type='checkbox' className='h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-600' />
+                  <input id='' type='checkbox' className='h-4 w-4 rounded border-slate-300 text-[#e10000] focus:ring-[#e10000]' />
                 </div>
                 <div className='text-sm leading-6'>
                   <label htmlFor='' className='text-sm font-medium leading-6 text-slate-900'>
@@ -199,7 +199,7 @@ export default function GetStarted() {
 
               <div className='flex items-center gap-x-3 mt-4'>
                 <div className='flex h-6 items-center'>
-                  <input id='' type='checkbox' className='h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-600' />
+                  <input id='' type='checkbox' className='h-4 w-4 rounded border-slate-300 text-[#e10000] focus:ring-[#e10000]' />
                 </div>
                 <div className='text-sm leading-6'>
                   <label htmlFor='' className='text-sm font-semibold leading-6 text-slate-900'>
@@ -220,7 +220,7 @@ export default function GetStarted() {
             </button>
             <button
               type='submit'
-              className='rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+              className='rounded-md bg-[#e10000] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#e10000] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e10000]'
             >
               Save
             </button>
