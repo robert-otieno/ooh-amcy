@@ -10,7 +10,7 @@ export default function Version2Layout({
 }>) {
   return (
     <html lang='en' style={{ scrollBehavior: "smooth" }}>
-      <body className={`bg-white ${inter.className}`} style={{ textRendering: "optimizeLegibility" }}>
+      <body className={`bg-[#e10000] ${inter.className}`} style={{ textRendering: "optimizeLegibility" }}>
         {children}
       </body>
     </html>
