@@ -4,7 +4,8 @@ import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
 import { db } from "../../firebase";
 
-import { Checkbox } from "@/components/ui/checkbox";
+// import { Checkbox } from "@/components/ui/checkbox";
+import Swal from "sweetalert2";
 
 export default function GetStarted() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -49,6 +50,12 @@ export default function GetStarted() {
       estimatedBudget: "",
       eventTargeting: false,
       marketingConsent: false,
+    });
+
+    Swal.fire({
+      icon: "success",
+      text: "Thank you for contacting AMCY OOH. Our Client Success Officer will be in touch with you shortly.",
+      footer: '<a href="/">Go to Home!</a>',
     });
   };
 
