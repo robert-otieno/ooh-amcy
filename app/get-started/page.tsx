@@ -4,7 +4,6 @@ import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
 import { db } from "../../firebase";
 
-// import { Checkbox } from "@/components/ui/checkbox";
 import Swal from "sweetalert2";
 
 export default function GetStarted() {
@@ -124,7 +123,7 @@ export default function GetStarted() {
                         value={formData.lastName}
                         onChange={(e) => handleChange(e)}
                         autoComplete='family-name'
-                        className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                        className='block w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                       />
                     </div>
                   </div>
@@ -142,7 +141,7 @@ export default function GetStarted() {
                         value={formData.businessEmail}
                         onChange={(e) => handleChange(e)}
                         autoComplete='email'
-                        className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                        className='block w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                       />
                     </div>
                   </div>
@@ -160,7 +159,7 @@ export default function GetStarted() {
                         autoComplete="organization"
                         value={formData.company}
                         onChange={(e) => handleChange(e)}
-                        className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                        className='block w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                       />
                     </div>
                   </div>
@@ -177,7 +176,7 @@ export default function GetStarted() {
                         id='jobTitle'
                         value={formData.jobTitle}
                         onChange={(e) => handleChange(e)}
-                        className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                        className='block w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                       />
                     </div>
                   </div>
@@ -310,7 +309,7 @@ export default function GetStarted() {
                       type='text'
                       value={formData.estimatedBudget}
                       onChange={(e) => handleChange(e)}
-                      className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                      className='block w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
