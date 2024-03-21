@@ -1,5 +1,5 @@
 import { Body, Button, Column, Container, Head, Heading, Hr, Html, Img, Link, Preview, Row, Section, Text, Tailwind } from "@react-email/components";
-export const EmailTemplate = ({ formData }: { formData: object }) => {
+export const EmailTemplate = ({ businessEmail, lastName, company, estimatedBudget, eventTargeting, firstName, industry, jobTitle, marketingConsent }: onBoardingProps) => {
   return (
     <Html>
       <Head />
@@ -45,16 +45,16 @@ export const EmailTemplate = ({ formData }: { formData: object }) => {
   );
 };
 
-// interface onBoardingProps {
-//     firstName: string,
-//     lastName: string,
-//     company: string,
-//     jobTitle: string,
-//     businessEmail: string,
-//     industry: string,
-//     informationRequested: array,
-//     serviceType: Array,
-//     estimatedBudget: string,
-//     eventTargeting: boolean,
-//     marketingConsent: boolean,
-// }
+interface onBoardingProps {
+  firstName: string;
+  lastName: string;
+  company: string;
+  jobTitle: string;
+  businessEmail: string;
+  industry: string;
+  //     informationRequested: array,
+  //     serviceType: Array,
+  estimatedBudget: string;
+  eventTargeting: boolean;
+  marketingConsent: boolean;
+}

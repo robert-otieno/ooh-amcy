@@ -157,6 +157,7 @@ export default function GetStarted() {
                         type='text'
                         name='company'
                         id='company'
+                        autoComplete="organization"
                         value={formData.company}
                         onChange={(e) => handleChange(e)}
                         className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'

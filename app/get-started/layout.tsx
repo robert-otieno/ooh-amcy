@@ -1,6 +1,5 @@
 import { Inter } from "next/font/google";
 
-// const inter = Inter({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Version2Layout({
@@ -10,7 +9,7 @@ export default function Version2Layout({
 }>) {
   return (
     <html lang='en' style={{ scrollBehavior: "smooth" }}>
-      <body className={`bg-[#e10000] ${inter.className}`} style={{ textRendering: "optimizeLegibility" }}>
+      <body className={inter.className} style={{ textRendering: "optimizeLegibility" }}>
         {children}
       </body>
     </html>
