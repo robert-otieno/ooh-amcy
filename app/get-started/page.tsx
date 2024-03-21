@@ -28,7 +28,6 @@ export default function GetStarted() {
   };
 
   const onSubmit = async (e: { preventDefault: () => void }) => {
-    console.log(formData);
     setIsSubmitting(true);
     e.preventDefault();
     try {
