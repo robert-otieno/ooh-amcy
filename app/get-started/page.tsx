@@ -28,6 +28,7 @@ export default function GetStarted() {
   };
 
   const onSubmit = async (e: { preventDefault: () => void }) => {
+    console.log(formData);
     setIsSubmitting(true);
     e.preventDefault();
     try {
@@ -185,7 +186,6 @@ export default function GetStarted() {
                       {["General", "Government", "Healthcare", "Higher Education", "Legal", "Pharmaceuticals", "Technology and Software", "Tourism", "E-commerce", "Fashion Store"].map((item, idx) => (
                         <div key={idx} className='flex items-center gap-x-3 sm:col-span-2'>
                           <input
-                            required
                             id={`item-${item}`}
                             name='industry'
                             type='radio'
@@ -235,7 +235,6 @@ export default function GetStarted() {
                         <div key={idx} className='flex items-center gap-x-3'>
                           <div className='flex h-6 items-center'>
                             <input
-                              required
                               id={`item-${item}`}
                               name='informationRequested'
                               checked={formData.informationRequested?.includes(item)}
@@ -268,7 +267,6 @@ export default function GetStarted() {
                         <div key={idx} className='flex items-center gap-x-3'>
                           <div className='flex h-6 items-center'>
                             <input
-                              required
                               id={`item-${idx}`}
                               checked={formData.serviceType?.includes(item)}
                               onChange={(e) => {
