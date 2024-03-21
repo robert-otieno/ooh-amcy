@@ -3,19 +3,9 @@
 import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
 import { db } from "../../firebase";
-// import { Dialog } from "@headlessui/react";
-// import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-// const navigation = [
-// { name: "Product", href: "#" },
-// { name: "Features", href: "#" },
-// { name: "Marketplace", href: "#" },
-// { name: "Company", href: "#" },
-// ];
+import { Checkbox } from "@/components/ui/checkbox";
 
-// function classNames(...classes: string[]) {
-//   return classes.filter(Boolean).join(" ");
-// }
 export default function GetStarted() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -23,21 +13,21 @@ export default function GetStarted() {
     firstName: "",
     lastName: "",
     company: "",
-    title: "",
+    jobTitle: "",
     businessEmail: "",
     industry: "",
-    informationRequested: "",
-    serviceType: "",
+    informationRequested: [] as any,
+    serviceType: [] as any,
     estimatedBudget: "",
-    eventTargeting: "",
-    marketingConsent: "",
+    eventTargeting: false,
+    marketingConsent: false,
   });
 
   const handleChange = (e: { target: { name: any; value: any } }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const onSubmit = async (e: { preventDefault: () => void; }) => {
+  const onSubmit = async (e: { preventDefault: () => void }) => {
     setIsSubmitting(true);
     e.preventDefault();
     try {
@@ -51,14 +41,14 @@ export default function GetStarted() {
       firstName: "",
       lastName: "",
       company: "",
-      title: "",
+      jobTitle: "",
       businessEmail: "",
       industry: "",
-      informationRequested: "",
-      serviceType: "",
+      informationRequested: [] as any,
+      serviceType: [] as any,
       estimatedBudget: "",
-      eventTargeting: "",
-      marketingConsent: "",
+      eventTargeting: false,
+      marketingConsent: false,
     });
   };
 
@@ -89,7 +79,7 @@ export default function GetStarted() {
             </p>
           </div>
 
-          <form className='mt-16'>
+          <form className='mt-16' onSubmit={onSubmit}>
             <div className='space-y-12'>
               <div className='border-b border-slate-900/10 pb-12'>
                 <h2 className='text-base font-semibold leading-7 text-slate-900'>Personal Information</h2>
@@ -97,29 +87,35 @@ export default function GetStarted() {
 
                 <div className='mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6'>
                   <div className='sm:col-span-3'>
-                    <label htmlFor='first-name' className='block text-sm font-medium leading-6 text-slate-900'>
+                    <label htmlFor='firstName' className='block text-sm font-medium leading-6 text-slate-900'>
                       First name
                     </label>
                     <div className='mt-2'>
                       <input
+                        required
                         type='text'
-                        name='first-name'
-                        id='first-name'
+                        name='firstName'
+                        id='firstName'
+                        value={formData.firstName}
+                        onChange={(e) => handleChange(e)}
                         autoComplete='given-name'
-                        className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                        className='block w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                       />
                     </div>
                   </div>
 
                   <div className='sm:col-span-3'>
-                    <label htmlFor='last-name' className='block text-sm font-medium leading-6 text-slate-900'>
+                    <label htmlFor='lastName' className='block text-sm font-medium leading-6 text-slate-900'>
                       Last name
                     </label>
                     <div className='mt-2'>
                       <input
+                        required
                         type='text'
-                        name='last-name'
-                        id='last-name'
+                        name='lastName'
+                        id='lastName'
+                        value={formData.lastName}
+                        onChange={(e) => handleChange(e)}
                         autoComplete='family-name'
                         className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                       />
@@ -127,14 +123,17 @@ export default function GetStarted() {
                   </div>
 
                   <div className='sm:col-span-6'>
-                    <label htmlFor='email' className='block text-sm font-medium leading-6 text-slate-900'>
+                    <label htmlFor='businessEmail' className='block text-sm font-medium leading-6 text-slate-900'>
                       Business Email
                     </label>
                     <div className='mt-2'>
                       <input
-                        id='email'
-                        name='email'
+                        required
+                        id='businessEmail'
+                        name='businessEmail'
                         type='email'
+                        value={formData.businessEmail}
+                        onChange={(e) => handleChange(e)}
                         autoComplete='email'
                         className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                       />
@@ -142,30 +141,34 @@ export default function GetStarted() {
                   </div>
 
                   <div className='sm:col-span-3'>
-                    <label htmlFor='first-name' className='block text-sm font-medium leading-6 text-slate-900'>
+                    <label htmlFor='company' className='block text-sm font-medium leading-6 text-slate-900'>
                       Company
                     </label>
                     <div className='mt-2'>
                       <input
+                        required
                         type='text'
-                        name='first-name'
-                        id='first-name'
-                        autoComplete='given-name'
+                        name='company'
+                        id='company'
+                        value={formData.company}
+                        onChange={(e) => handleChange(e)}
                         className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                       />
                     </div>
                   </div>
 
                   <div className='sm:col-span-3'>
-                    <label htmlFor='last-name' className='block text-sm font-medium leading-6 text-slate-900'>
+                    <label htmlFor='jobTitle' className='block text-sm font-medium leading-6 text-slate-900'>
                       Title
                     </label>
                     <div className='mt-2'>
                       <input
+                        required
                         type='text'
-                        name='last-name'
-                        id='last-name'
-                        autoComplete='family-name'
+                        name='jobTitle'
+                        id='jobTitle'
+                        value={formData.jobTitle}
+                        onChange={(e) => handleChange(e)}
                         className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                       />
                     </div>
@@ -181,14 +184,28 @@ export default function GetStarted() {
                     <div className='mt-6 space-y-2 grid grid-cols-1 gap-x-6 sm:grid-cols-6'>
                       {["General", "Government", "Healthcare", "Higher Education", "Legal", "Pharmaceuticals", "Technology and Software", "Tourism", "E-commerce", "Fashion Store"].map((item, idx) => (
                         <div key={idx} className='flex items-center gap-x-3 sm:col-span-2'>
-                          <input name='industry' type='radio' className='h-4 w-4 border-slate-300 text-[#e10000] focus:ring-[#e10000]' />
-                          <label className='font-light leading-6 text-slate-600'>{item}</label>
+                          <input
+                            required
+                            id={`item-${item}`}
+                            name='industry'
+                            type='radio'
+                            checked={formData.industry === item}
+                            onChange={(e) => {
+                              if (e.target.checked) {
+                                setFormData({ ...formData, industry: item });
+                              }
+                            }}
+                            className='h-4 w-4 border-slate-300 text-[#e10000] focus:ring-[#e10000]'
+                          />
+                          <label htmlFor={`item-${item}`} className='font-light leading-6 text-slate-600'>
+                            {item}
+                          </label>
                         </div>
                       ))}
                     </div>
                   </fieldset>
 
-                  <div className='mt-4'>
+                  {/* <div className='mt-4'>
                     <label htmlFor='other-industry' className='block text-sm font-medium leading-6 text-slate-900'>
                       Other (Specify)
                     </label>
@@ -200,7 +217,7 @@ export default function GetStarted() {
                         className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                       />
                     </div>
-                  </div>
+                  </div> */}
 
                   <fieldset>
                     <legend className='text-sm font-semibold leading-6 text-slate-900'>Send information about</legend>
@@ -217,10 +234,24 @@ export default function GetStarted() {
                       ].map((item, idx) => (
                         <div key={idx} className='flex items-center gap-x-3'>
                           <div className='flex h-6 items-center'>
-                            <input id={`item-${idx}`} name='' type='checkbox' className='h-4 w-4 rounded border-slate-300 text-[#e10000] focus:ring-[#e10000]' />
+                            <input
+                              required
+                              id={`item-${item}`}
+                              name='informationRequested'
+                              checked={formData.informationRequested?.includes(item)}
+                              onChange={(e) => {
+                                const isChecked = e.target.checked;
+                                setFormData((prevData) => ({
+                                  ...prevData,
+                                  informationRequested: isChecked ? [...(prevData.informationRequested || []), item] : (prevData.informationRequested || []).filter((value: string) => value !== item),
+                                }));
+                              }}
+                              type='checkbox'
+                              className='h-4 w-4 rounded border-slate-300 text-[#e10000] focus:ring-[#e10000]'
+                            />
                           </div>
                           <div className='leading-6'>
-                            <label htmlFor={`item-${idx}`} className='font-light leading-6 text-slate-600'>
+                            <label htmlFor={`item-${item}`} className='font-light leading-6 text-slate-600'>
                               {item}
                             </label>
                           </div>
@@ -236,7 +267,20 @@ export default function GetStarted() {
                       {["Mall Media Advertising", "Instore Media Advertising", "Street Digital Out-of-Home Advertising", "Residential and Commercial Building Advertising"].map((item, idx) => (
                         <div key={idx} className='flex items-center gap-x-3'>
                           <div className='flex h-6 items-center'>
-                            <input id={`item-${idx}`} type='checkbox' className='h-4 w-4 rounded border-slate-300 text-[#e10000] focus:ring-[#e10000]' />
+                            <input
+                              required
+                              id={`item-${idx}`}
+                              checked={formData.serviceType?.includes(item)}
+                              onChange={(e) => {
+                                const isChecked = e.target.checked;
+                                setFormData((prevData) => ({
+                                  ...prevData,
+                                  serviceType: isChecked ? [...(prevData.serviceType || []), item] : (prevData.serviceType || []).filter((value: string) => value !== item),
+                                }));
+                              }}
+                              type='checkbox'
+                              className='h-4 w-4 rounded border-slate-300 text-[#e10000] focus:ring-[#e10000]'
+                            />
                           </div>
                           <div className='leading-6'>
                             <label htmlFor={`item-${idx}`} className='font-light leading-6 text-slate-600'>
@@ -250,15 +294,17 @@ export default function GetStarted() {
                 </div>
 
                 <div className='mt-4'>
-                  <label htmlFor='email' className='block text-sm font-medium leading-6 text-slate-900'>
+                  <label htmlFor='estimatedBudget' className='block text-sm font-medium leading-6 text-slate-900'>
                     What is your estimated budget for OOH
                   </label>
                   <div className='mt-2'>
                     <input
-                      id='email'
-                      name='email'
-                      type='email'
-                      autoComplete='email'
+                      required
+                      id='estimatedBudget'
+                      name='estimatedBudget'
+                      type='text'
+                      value={formData.estimatedBudget}
+                      onChange={(e) => handleChange(e)}
                       className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                     />
                   </div>
@@ -266,10 +312,17 @@ export default function GetStarted() {
 
                 <div className='flex items-center gap-x-3 mt-4'>
                   <div className='flex h-6 items-center'>
-                    <input id='' type='checkbox' className='h-4 w-4 rounded border-slate-300 text-[#e10000] focus:ring-[#e10000]' />
+                    <input
+                      id='eventTargeting'
+                      name='eventTargeting'
+                      type='checkbox'
+                      checked={formData.eventTargeting}
+                      onChange={(e) => setFormData({ ...formData, eventTargeting: e.target.checked })}
+                      className='h-4 w-4 rounded border-slate-300 text-[#e10000] focus:ring-[#e10000]'
+                    />
                   </div>
                   <div className='text-sm leading-6'>
-                    <label htmlFor='' className='text-sm font-medium leading-6 text-slate-900'>
+                    <label htmlFor='eventTargeting' className='text-sm font-medium leading-6 text-slate-900'>
                       Are you interested in targeting specific events such as conferences, conventions, sporting events, music concerts/festivals/sale offers, etc.?
                     </label>
                   </div>
@@ -277,10 +330,17 @@ export default function GetStarted() {
 
                 <div className='flex items-center gap-x-3 mt-4'>
                   <div className='flex h-6 items-center'>
-                    <input id='' type='checkbox' className='h-4 w-4 rounded border-slate-300 text-[#e10000] focus:ring-[#e10000]' />
+                    <input
+                      id='marketingConsent'
+                      name='marketingConsent'
+                      type='checkbox'
+                      checked={formData.marketingConsent}
+                      onChange={(e) => setFormData({ ...formData, marketingConsent: e.target.checked })}
+                      className='h-4 w-4 rounded border-slate-300 text-[#e10000] focus:ring-[#e10000]'
+                    />
                   </div>
                   <div className='text-sm leading-6'>
-                    <label htmlFor='' className='text-sm font-semibold leading-6 text-slate-900'>
+                    <label htmlFor='marketingConsent' className='text-sm font-semibold leading-6 text-slate-900'>
                       I agree to receive marketing and communications from Amcy OOH. I&apos;ve read and agreed to your privacy policy.
                     </label>
                   </div>
@@ -291,6 +351,7 @@ export default function GetStarted() {
             <div className='mt-6 flex items-center justify-end gap-x-6'>
               <button
                 type='submit'
+                disabled={isSubmitting}
                 className='rounded-md bg-[#e10000] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#e10000] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e10000]'
               >
                 Submit
