@@ -27,11 +27,13 @@ const GetStartedForm = () => {
     const onSubmit = async (e: { preventDefault: () => void }) => {
       setIsSubmitting(true);
       e.preventDefault();
+
       try {
         await addDoc(collection(db, "ooh_requests"), { ...formData, createdAt: serverTimestamp() });
       } catch (error) {
         console.log(error);
       }
+      
       setIsSubmitting(false);
   
       setFormData({
