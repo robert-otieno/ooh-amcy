@@ -1,12 +1,43 @@
+import { Checkbox } from "@/components/ui/checkbox";
 import { db } from "@/firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
 const GetStartedForm = () => {
-    const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    company: "",
+    jobTitle: "",
+    businessEmail: "",
+    industry: "",
+    informationRequested: [] as any,
+    serviceType: [] as any,
+    estimatedBudget: "",
+    eventTargeting: false,
+    marketingConsent: false,
+  });
+
+  const handleChange = (e: { target: { name: any; value: any } }) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = async (e: { preventDefault: () => void }) => {
+    setIsSubmitting(true);
+    e.preventDefault();
+
+    try {
+      await addDoc(collection(db, "ooh_requests"), { ...formData, createdAt: serverTimestamp() });
+    } catch (error) {
+      console.log(error);
+    }
+
+    setIsSubmitting(false);
+
+    setFormData({
       firstName: "",
       lastName: "",
       company: "",
@@ -19,43 +50,13 @@ const GetStartedForm = () => {
       eventTargeting: false,
       marketingConsent: false,
     });
-  
-    const handleChange = (e: { target: { name: any; value: any } }) => {
-      setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-  
-    const onSubmit = async (e: { preventDefault: () => void }) => {
-      setIsSubmitting(true);
-      e.preventDefault();
 
-      try {
-        await addDoc(collection(db, "ooh_requests"), { ...formData, createdAt: serverTimestamp() });
-      } catch (error) {
-        console.log(error);
-      }
-      
-      setIsSubmitting(false);
-  
-      setFormData({
-        firstName: "",
-        lastName: "",
-        company: "",
-        jobTitle: "",
-        businessEmail: "",
-        industry: "",
-        informationRequested: [] as any,
-        serviceType: [] as any,
-        estimatedBudget: "",
-        eventTargeting: false,
-        marketingConsent: false,
-      });
-  
-      Swal.fire({
-        icon: "success",
-        text: "Thank you for contacting AMCY OOH. Our Client Success Officer will be in touch with you shortly.",
-        footer: '<a href="/">Go to Home!</a>',
-      });
-    };
+    Swal.fire({
+      icon: "success",
+      text: "Thank you for contacting AMCY OOH. Our Client Success Officer will be in touch with you shortly.",
+      footer: '<a href="/">Go to Home!</a>',
+    });
+  };
   return (
     <form className='mt-16' onSubmit={onSubmit}>
       <div className='space-y-12'>
@@ -77,7 +78,7 @@ const GetStartedForm = () => {
                   value={formData.firstName}
                   onChange={(e) => handleChange(e)}
                   autoComplete='given-name'
-                  className='block w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                  className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                 />
               </div>
             </div>
@@ -95,7 +96,7 @@ const GetStartedForm = () => {
                   value={formData.lastName}
                   onChange={(e) => handleChange(e)}
                   autoComplete='family-name'
-                  className='block w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                  className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                 />
               </div>
             </div>
@@ -113,7 +114,7 @@ const GetStartedForm = () => {
                   value={formData.businessEmail}
                   onChange={(e) => handleChange(e)}
                   autoComplete='email'
-                  className='block w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                  className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                 />
               </div>
             </div>
@@ -131,7 +132,7 @@ const GetStartedForm = () => {
                   autoComplete='organization'
                   value={formData.company}
                   onChange={(e) => handleChange(e)}
-                  className='block w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                  className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                 />
               </div>
             </div>
@@ -148,7 +149,7 @@ const GetStartedForm = () => {
                   id='jobTitle'
                   value={formData.jobTitle}
                   onChange={(e) => handleChange(e)}
-                  className='block w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                  className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                 />
               </div>
             </div>
@@ -268,7 +269,6 @@ const GetStartedForm = () => {
               </div>
             </fieldset>
           </div>
-
           <div className='mt-4'>
             <label htmlFor='estimatedBudget' className='block text-sm font-medium leading-6 text-slate-900'>
               What is your estimated budget for OOH
@@ -281,7 +281,7 @@ const GetStartedForm = () => {
                 type='text'
                 value={formData.estimatedBudget}
                 onChange={(e) => handleChange(e)}
-                className='block w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
               />
             </div>
           </div>
@@ -303,7 +303,6 @@ const GetStartedForm = () => {
               </label>
             </div>
           </div>
-
           <div className='flex items-center gap-x-3 mt-4'>
             <div className='flex h-6 items-center'>
               <input

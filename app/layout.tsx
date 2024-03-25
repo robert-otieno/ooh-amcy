@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Lexend } from "next/font/google";
+// import { Inter, Lexend } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-const lexend = Lexend({ subsets: ["latin"] })
+const mona = localFont({ src: "/font/Mona-Sans.woff2", variable: "--font-mona" });
+
+// const inter = Inter({ subsets: ["latin"] });
+// const lexend = Lexend({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "OOH Amcy",
@@ -16,8 +19,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" style={{scrollBehavior: "smooth"}}>
-      <body className={lexend.className} style={{textRendering: "optimizeLegibility"}}>{children}</body>
+    <html lang='en' className=" bg-neutral-950 text-base antialiased" style={{ scrollBehavior: "smooth" }}>
+      <body className={`${mona.variable} font-sans flex min-h-full flex-col`} style={{ textRendering: "optimizeLegibility" }}>
+        {children}
+      </body>
     </html>
   );
 }
