@@ -5,7 +5,7 @@ export default function page() {
   return (
     <>
       <Header />
-      <div className='relative flex flex-auto overflow-hidden bg-white pt-14 rounded-t-[40px] transform-none' style={{ transformOrigin: "50% 50% 0px" }}>
+      <div className='relative flex flex-auto overflow-hidden bg-white pt-14 !rounded-t-[40px] transform-none' style={{ transformOrigin: "50% 50% 0px" }}>
         <div className='relative isolate flex w-full flex-col pt-9' style={{ transform: "none", transformOrigin: "50% 50% 0px" }}>
           <svg
             aria-hidden='true'

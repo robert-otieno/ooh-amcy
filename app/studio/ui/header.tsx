@@ -39,22 +39,22 @@ export default function Header() {
                   <polygon points='119.83 69.75 40.31 47.75 119.83 47.75 119.83 69.75' fill='#e10000' />
                 </svg>
               </a>
-              {/* <div className='flex items-center gap-x-8'>
-                <a className='inline-flex rounded-full px-4 py-1.5 text-sm font-semibold transition bg-[#E10000] text-white hover:bg-[#E10000]/80' href='/contact'>
-                  <span className='relative top-px'>Contact us</span>
+              <div className='flex items-center gap-x-8'>
+                <a className='inline-flex rounded-full px-4 py-1.5 text-sm font-semibold transition bg-[#E10000] text-white hover:bg-[#E10000]/80' href='/get-started'>
+                  <span className='relative top-px'>Get Started</span>
                 </a>
-                <button type='button' aria-expanded='false' aria-controls=':rm:' className='group -m-2.5 rounded-full p-2.5 transition hover:bg-[#E10000]/10' aria-label='Toggle navigation'>
+                {/* <button type='button' aria-expanded='false' aria-controls=':rm:' className='group -m-2.5 rounded-full p-2.5 transition hover:bg-[#E10000]/10' aria-label='Toggle navigation'>
                   <svg viewBox='0 0 24 24' aria-hidden='true' className='h-6 w-6 fill-[#E10000] group-hover:fill-[#E10000]/70'>
                     <path d='M2 6h20v2H2zM2 16h20v2H2z'></path>
                   </svg>
-                </button>
-              </div> */}
+                </button> */}
+              </div>
             </div>
           </div>
         </div>
       </div>
-      {/* <div id=':rm:' className='relative z-50 overflow-hidden bg-[#E10000] pt-2' aria-hidden='true' style={{ height: "0.5rem" }}>
-        <div className='bg-[#E10000]/80'>
+      <div id=':rm:' className='relative z-50 overflow-hidden bg-[#E10000] pt-2' aria-hidden='true' style={{ height: "0.5rem" }}>
+        {/* <div className='bg-[#E10000]/80'>
           <div className='bg-[#E10000] pb-16 pt-14'>
             <div className='mx-auto max-w-7xl px-6 lg:px-8'>
               <div className='mx-auto max-w-2xl lg:max-w-none'>
@@ -229,8 +229,8 @@ export default function Header() {
               </div>
             </div>
           </div>
-        </div>
-      </div> */}
+        </div>*/}
+      </div>
     </header>
   );
 }
