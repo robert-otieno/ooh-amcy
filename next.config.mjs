@@ -5,7 +5,7 @@ const nextConfig = {
           // Basic redirect
           {
             source: '/',
-            destination: '/get-started',
+            destination: '/studio',
             permanent: true,
           },
           // Wildcard path matching
