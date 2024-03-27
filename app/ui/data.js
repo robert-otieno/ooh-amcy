@@ -1,37 +1,81 @@
-export const services = [
-  {
-    id: 123,
-    title: "Targeted Advertising",
-    description: "Amcy OOH helps you develop and execute advertising campaigns based on specific target demographics, location, and time of the day to deliver relevant and personalized messages.",
-  },
-  {
-    id: 223,
-    title: "High Brand Exposure",
-    description:
-      "With Amcy OOH you can amplify your message and build brand awareness by activating our 1000+ place-based screens in office/commercial buildings, malls, restaurants, residential apartments and digital interactive billboards.",
-  },
-  {
-    id: 323,
-    title: "Fast and Flexible Activations",
-    description:
-      "With Amcy OOH Ad Suite, you can upload, schedule and launch campaigns in minutes. You can also update your messaging in real-time based on various factors such as weather conditions, traffic information, or upcoming events ensuring your messaging is always relevant and timely.",
-  },
-  {
-    id: 423,
-    title: "Evidence-Based Measurement",
-    description:
-      "We regularly collect, analyze, monitor, and report on data, insights and key performance indicators (KPIs) to optimize campaign performance. We use data-driven insights to inform message positioning and campaign performance. ",
-  },
-  {
-    id: 523,
-    title: "Extra Support Services",
-    description:
-      "Our team of on-demand designers, copywriters, editors, marketing and advertising experts from Amcy VA are always available to help you to organize, create and run successful AD campaigns.",
-  },
-];
+import { randomUUID } from "crypto";
 
-export const locations = [
+export const about_us = {
+  tag: "about us",
+  title: "Welcome to AMCY OOH",
+  subtitle: "Karibu",
+  description: "AMCY OOH provides innovative, reliable and timely OOH solutions to brands ensuring that your brand is placed on the right platform, at the right time, and with the right content.",
+  solutions: [
     {
+      id: randomUUID(),
+      title: "Targeted Advertising",
+      description: "Amcy OOH helps you develop and execute advertising campaigns based on specific target demographics, location, and time of the day to deliver relevant and personalized messages.",
+    },
+    {
+      id: randomUUID(),
+      title: "High Brand Exposure",
+      description:
+        "With Amcy OOH you can amplify your message and build brand awareness by activating our 1000+ place-based screens in office/commercial buildings, malls, restaurants, residential apartments and digital interactive billboards.",
+    },
+    {
+      id: randomUUID(),
+      title: "Fast and Flexible Activations",
+      description:
+        "With Amcy OOH Ad Suite, you can upload, schedule and launch campaigns in minutes. You can also update your messaging in real-time based on various factors such as weather conditions, traffic information, or upcoming events ensuring your messaging is always relevant and timely.",
+    },
+    {
+      id: randomUUID(),
+      title: "Evidence-Based Measurement",
+      description:
+        "We regularly collect, analyze, monitor, and report on data, insights and key performance indicators (KPIs) to optimize campaign performance. We use data-driven insights to inform message positioning and campaign performance. ",
+    },
+    {
+      id: randomUUID(),
+      title: "Extra Support Services",
+      description:
+        "Our team of on-demand designers, copywriters, editors, marketing and advertising experts from Amcy VA are always available to help you to organize, create and run successful AD campaigns.",
+    },
+  ],
+};
+
+export const services = {
+  tag: "services",
+  title: "Streamline your Out-of-Home Advertising",
+  description:
+    "We believe innovation, technology and entrepreneurship can transform the world and make it a better place. Therefore, we are committed to helping business brands create unique customer experiences and deliver value to their people, Every day.",
+  articles: [
+    {
+      id: randomUUID(),
+      title: "Advertising Campaigns",
+      description: "We develop and execute advertising campaigns that leverage our network digital OOH screens to deliver targeted messages to consumers in high-traffic locations.",
+    },
+    {
+      id: randomUUID(),
+      title: "Data Collection and Analysis",
+      description:
+        "We identify, gather and analyze valuable insights about audience demographics, behavior, and engagement, to aid in making informed decisions on advertising efforts across our media locations. ",
+    },
+    {
+      id: randomUUID(),
+      title: "Campaign Monitoring",
+      description: "We monitor KPIs and use data-driven insights to optimize campaign performance in real-time to maximize return on investment (ROI) and deliver measurable results for our clients.",
+    },
+  ],
+};
+
+export const quote = {
+  tag: "quote",
+  content:
+    "Whether you’re just starting out, launching a new product/service, or looking to increase, build and scale your brand, you can trust Amcy OOH to support you and your business conveniently reach your target audience, where they live, dine, shop, work and commute, Every day.",
+  author: "Mongare, Anthony",
+};
+
+export const media_locations = {
+  tag: "media locations",
+  title: "Our network of media locations for your brand",
+  locations: [
+    {
+      id: randomUUID(),
       icon: (
         <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' className='w-8 h-8'>
           <path
@@ -44,6 +88,7 @@ export const locations = [
       text: "Mall Media",
     },
     {
+      id: randomUUID(),
       icon: (
         <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' className='w-8 h-8'>
           <path
@@ -56,6 +101,7 @@ export const locations = [
       text: "Instore Media",
     },
     {
+      id: randomUUID(),
       icon: (
         <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' className='w-8 h-8'>
           <path stroke-linecap='round' stroke-linejoin='round' d='m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z' />
@@ -64,6 +110,7 @@ export const locations = [
       text: "Street Digital Media",
     },
     {
+      id: randomUUID(),
       icon: (
         <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' className='w-8 h-8'>
           <path
@@ -76,6 +123,7 @@ export const locations = [
       text: "Commercial Buildings",
     },
     {
+      id: randomUUID(),
       icon: (
         <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' className='w-8 h-8'>
           <path
@@ -88,6 +136,7 @@ export const locations = [
       text: "Residential Apartments",
     },
     {
+      id: randomUUID(),
       icon: (
         <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' className='w-8 h-8'>
           <path stroke-linecap='round' stroke-linejoin='round' d='M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z' />
@@ -96,4 +145,12 @@ export const locations = [
       ),
       text: "Digital Marketing",
     },
-  ];
+  ],
+};
+
+export const hero = {
+  tag: "hero",
+  title: "Innovative Brand Awareness and Engagement Solutions",
+  content:
+    "Amcy OOH is a Digital Out-of-Home Advertising Service in Nairobi, Kenya. We provide the tools, innovation and technology necessary to help businesses create, develop and execute Digital Out-of-Home Ad campaigns for their brands.",
+};
