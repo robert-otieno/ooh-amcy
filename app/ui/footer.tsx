@@ -162,7 +162,7 @@ export default function Footer() {
               ></path>
             </svg> */}
             </a>
-            <p className='text-lg text-[#E10000]/70'>© Amcy Management 2024</p>
+            <p className='text-base text-[#111812]'>© Amcy Management 2024</p>
           </div>
         </div>
       </div>
