@@ -150,7 +150,7 @@ export const media_locations = {
 
 export const hero = {
   tag: "hero",
-  title: "Innovative Brand Awareness and Engagement Solutions",
+  title: "Innovative Out-of-Home Advertising Solutions",
   content:
-    "Amcy OOH is a Digital Out-of-Home Advertising Service in Nairobi, Kenya. We provide the tools, innovation and technology necessary to help businesses create, develop and execute Digital Out-of-Home Ad campaigns for their brands.",
+    "Amcy OOH helps business brands create, develop, and execute Interactive Ad campaigns in malls, commercial buildings and street digital billboards. We are on a mission to help brands reach their target audience where they live, dine, shop, work and commute, Everyday.",
 };
