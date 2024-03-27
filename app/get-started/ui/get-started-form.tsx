@@ -13,6 +13,7 @@ const GetStartedForm = () => {
     company: "",
     jobTitle: "",
     businessEmail: "",
+    phoneNumber: "",
     industry: "",
     informationRequested: [] as any,
     serviceType: [] as any,
@@ -43,6 +44,7 @@ const GetStartedForm = () => {
       company: "",
       jobTitle: "",
       businessEmail: "",
+      phoneNumber: "",
       industry: "",
       informationRequested: [] as any,
       serviceType: [] as any,
@@ -101,7 +103,7 @@ const GetStartedForm = () => {
               </div>
             </div>
 
-            <div className='sm:col-span-6'>
+            <div className='sm:col-span-3'>
               <label htmlFor='businessEmail' className='block text-sm font-medium leading-6 text-slate-900'>
                 Business Email
               </label>
@@ -114,6 +116,24 @@ const GetStartedForm = () => {
                   value={formData.businessEmail}
                   onChange={(e) => handleChange(e)}
                   autoComplete='email'
+                  className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                />
+              </div>
+            </div>
+
+            <div className='sm:col-span-3'>
+              <label htmlFor='phoneNumber' className='block text-sm font-medium leading-6 text-slate-900'>
+                Phone Number
+              </label>
+              <div className='mt-2'>
+                <input
+                  required
+                  id='phoneNumber'
+                  name='phoneNumber'
+                  type='number'
+                  value={formData.phoneNumber}
+                  onChange={(e) => handleChange(e)}
+                  autoComplete='tel'
                   className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
                 />
               </div>
@@ -176,7 +196,7 @@ const GetStartedForm = () => {
                       }}
                       className='h-4 w-4 border-slate-300 text-[#e10000] focus:ring-[#e10000]'
                     />
-                    <label htmlFor={`item-${item}`} className='font-light leading-6 text-slate-600'>
+                    <label htmlFor={`item-${item}`} className='font-normal leading-6 text-slate-600'>
                       {item}
                     </label>
                   </div>
@@ -229,7 +249,7 @@ const GetStartedForm = () => {
                       />
                     </div>
                     <div className='leading-6'>
-                      <label htmlFor={`item-${item}`} className='font-light leading-6 text-slate-600'>
+                      <label htmlFor={`item-${item}`} className='font-normal leading-6 text-slate-600'>
                         {item}
                       </label>
                     </div>
@@ -260,7 +280,7 @@ const GetStartedForm = () => {
                       />
                     </div>
                     <div className='leading-6'>
-                      <label htmlFor={`item-${idx}`} className='font-light leading-6 text-slate-600'>
+                      <label htmlFor={`item-${idx}`} className='font-normal leading-6 text-slate-600'>
                         {item}
                       </label>
                     </div>

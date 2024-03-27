@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 // import { Inter, Lexend } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import Footer from "./ui/footer";
 
 const mona = localFont({ src: "/font/Mona-Sans.woff2", variable: "--font-mona" });
 
@@ -22,6 +23,9 @@ export default function RootLayout({
     <html lang='en' className=" bg-neutral-950 text-base antialiased" style={{ scrollBehavior: "smooth" }}>
       <body className={`${mona.variable} font-sans flex min-h-full flex-col`} style={{ textRendering: "optimizeLegibility" }}>
         {children}
+        
+
+        <Footer />
       </body>
     </html>
   );
