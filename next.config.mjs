@@ -3,11 +3,11 @@ const nextConfig = {
   async redirects() {
     return [
       // Basic redirect
-      // {
-      //   source: '/',
-      //   destination: '/',
-      //   permanent: true,
-      // },
+      {
+        source: "/",
+        destination: "/get-started",
+        permanent: false,
+      },
       // Wildcard path matching
       //   {
       //     source: '/blog/:slug',
