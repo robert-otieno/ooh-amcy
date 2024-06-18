@@ -56,7 +56,6 @@ const GetStartedForm = () => {
     Swal.fire({
       icon: "success",
       text: "Thank you for contacting AMCY OOH. Our Client Success Officer will be in touch with you shortly.",
-      footer: '<a href="/">Go to Home!</a>',
     });
   };
   return (
@@ -80,7 +79,7 @@ const GetStartedForm = () => {
                   value={formData.firstName}
                   onChange={(e) => handleChange(e)}
                   autoComplete='given-name'
-                  className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                  className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#123f33] sm:text-sm sm:leading-6'
                 />
               </div>
             </div>
@@ -98,7 +97,7 @@ const GetStartedForm = () => {
                   value={formData.lastName}
                   onChange={(e) => handleChange(e)}
                   autoComplete='family-name'
-                  className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                  className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#123f33] sm:text-sm sm:leading-6'
                 />
               </div>
             </div>
@@ -116,7 +115,7 @@ const GetStartedForm = () => {
                   value={formData.businessEmail}
                   onChange={(e) => handleChange(e)}
                   autoComplete='email'
-                  className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                  className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#123f33] sm:text-sm sm:leading-6'
                 />
               </div>
             </div>
@@ -134,7 +133,7 @@ const GetStartedForm = () => {
                   value={formData.phoneNumber}
                   onChange={(e) => handleChange(e)}
                   autoComplete='tel'
-                  className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                  className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#123f33] sm:text-sm sm:leading-6'
                 />
               </div>
             </div>
@@ -152,7 +151,7 @@ const GetStartedForm = () => {
                   autoComplete='organization'
                   value={formData.company}
                   onChange={(e) => handleChange(e)}
-                  className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                  className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#123f33] sm:text-sm sm:leading-6'
                 />
               </div>
             </div>
@@ -169,7 +168,7 @@ const GetStartedForm = () => {
                   id='jobTitle'
                   value={formData.jobTitle}
                   onChange={(e) => handleChange(e)}
-                  className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                  className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#123f33] sm:text-sm sm:leading-6'
                 />
               </div>
             </div>
@@ -194,7 +193,7 @@ const GetStartedForm = () => {
                           setFormData({ ...formData, industry: item });
                         }
                       }}
-                      className='h-4 w-4 border-slate-300 text-[#e10000] focus:ring-[#e10000]'
+                      className='h-4 w-4 border-slate-300 text-[#123f33] focus:ring-[#123f33]'
                     />
                     <label htmlFor={`item-${item}`} className='font-normal leading-6 text-slate-600'>
                       {item}
@@ -213,7 +212,7 @@ const GetStartedForm = () => {
                 id='other-industry'
                 name='other-industry'
                 type='text'
-                className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#123f33] sm:text-sm sm:leading-6'
               />
             </div>
           </div> */}
@@ -245,7 +244,7 @@ const GetStartedForm = () => {
                           }));
                         }}
                         type='checkbox'
-                        className='h-4 w-4 rounded border-slate-300 text-[#e10000] focus:ring-[#e10000]'
+                        className='h-4 w-4 rounded border-slate-300 text-[#123f33] focus:ring-[#123f33]'
                       />
                     </div>
                     <div className='leading-6'>
@@ -276,7 +275,7 @@ const GetStartedForm = () => {
                           }));
                         }}
                         type='checkbox'
-                        className='h-4 w-4 rounded border-slate-300 text-[#e10000] focus:ring-[#e10000]'
+                        className='h-4 w-4 rounded border-slate-300 text-[#123f33] focus:ring-[#123f33]'
                       />
                     </div>
                     <div className='leading-6'>
@@ -301,7 +300,7 @@ const GetStartedForm = () => {
                 type='text'
                 value={formData.estimatedBudget}
                 onChange={(e) => handleChange(e)}
-                className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#e10000] sm:text-sm sm:leading-6'
+                className='block outline-none w-full rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[#123f33] sm:text-sm sm:leading-6'
               />
             </div>
           </div>
@@ -314,7 +313,7 @@ const GetStartedForm = () => {
                 type='checkbox'
                 checked={formData.eventTargeting}
                 onChange={(e) => setFormData({ ...formData, eventTargeting: e.target.checked })}
-                className='h-4 w-4 rounded border-slate-300 text-[#e10000] focus:ring-[#e10000]'
+                className='h-4 w-4 rounded border-slate-300 text-[#123f33] focus:ring-[#123f33]'
               />
             </div>
             <div className='text-sm leading-6'>
@@ -331,7 +330,7 @@ const GetStartedForm = () => {
                 type='checkbox'
                 checked={formData.marketingConsent}
                 onChange={(e) => setFormData({ ...formData, marketingConsent: e.target.checked })}
-                className='h-4 w-4 rounded border-slate-300 text-[#e10000] focus:ring-[#e10000]'
+                className='h-4 w-4 rounded border-slate-300 text-[#123f33] focus:ring-[#123f33]'
               />
             </div>
             <div className='text-sm leading-6'>
@@ -347,7 +346,7 @@ const GetStartedForm = () => {
         <button
           type='submit'
           disabled={isSubmitting}
-          className='rounded-md bg-[#e10000] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#e10000] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e10000]'
+          className='rounded-md bg-[#123f33] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#123f33] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#123f33]'
         >
           Submit
         </button>

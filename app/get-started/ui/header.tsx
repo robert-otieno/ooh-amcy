@@ -5,7 +5,7 @@ const Header = () => {
         <div className='flex lg:flex-1'>
           <a href='/' className='-m-1.5 p-1.5'>
             <span className='sr-only'>Amcy OOH</span>
-            <img className='h-16 w-auto' src='/amcy_ooh_logo.jpeg' alt='' />
+            <h2 className='text-base font-mono font-semibold leading-7 text-slate-900'>Amcy OOH</h2>
           </a>
         </div>
       </nav>
