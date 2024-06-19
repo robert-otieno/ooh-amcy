@@ -24,11 +24,11 @@ export default function Header() {
               <a aria-label='Home' href='/'>
                 <AmcyLogo aria-hidden='true' className='group/logo h-12' />
               </a>
-              <div className='flex items-center gap-x-8'>
+              {/* <div className='flex items-center gap-x-8'>
                 <a className='inline-flex rounded-full px-4 py-1.5 text-sm font-semibold transition bg-[#123f33] text-white hover:bg-[#123f33]/80' href='/get-started'>
                   <span className='relative top-px'>Get Started</span>
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

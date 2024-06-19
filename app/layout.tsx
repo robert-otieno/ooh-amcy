@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "./ui/footer";
+import Header from "./ui/header";
 
 const mona = localFont({ src: "/font/Mona-Sans.woff2", variable: "--font-mona" });
 
@@ -20,8 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className=' bg-neutral-950 text-base antialiased' style={{ scrollBehavior: "smooth" }}>
+    <html lang='en' className='h-screen bg-neutral-950 text-base antialiased' style={{ scrollBehavior: "smooth" }}>
       <body className={`${mona.variable} font-sans flex min-h-full flex-col`} style={{ textRendering: "optimizeLegibility" }}>
+        <Header />
         {children}
         <Footer />
       </body>
