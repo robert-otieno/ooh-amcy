@@ -20,7 +20,7 @@ export default function Header() {
       <div className='absolute left-0 right-0 top-2 z-40 pt-14'>
         <div className='mx-auto max-w-7xl px-6 lg:px-8'>
           <div className='mx-auto max-w-2xl lg:max-w-none'>
-            <div className='flex items-center justify-between'>
+            <div className='flex items-center'>
               <a aria-label='Home' href='/'>
                 <AmcyLogo aria-hidden='true' className='group/logo h-12' />
               </a>

@@ -1,5 +1,5 @@
 "use client";
-import { auth, db } from "@/firebase";
+import { db, firebaseAuth } from "@/firebase";
 import { collection, getDocs, Timestamp } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import Request from "../components/request";
@@ -41,7 +41,7 @@ const Admin = () => {
     fetchRequests();
   }, []);
 
-  if (auth.currentUser) {
+  if (firebaseAuth.currentUser) {
     return (
       <div className='relative bg-white pt-[120px] dark:bg-dark lg:pt-[150px]'>
         <div className='container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8'>
@@ -59,7 +59,7 @@ const Admin = () => {
     return (
       <div className='relative pt-[120px] lg:pt-[150px] bg-white dark:bg-dark mx-auto flex-1'>
         <div className='container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 items-center justify-center'>
-          <h2 className='font-display text-2xl tracking-tight text-red-600 sm:text-3xl'>Authenication Required!</h2>
+          <h2 className='font-display text-2xl tracking-tight text-red-600 sm:text-3xl'>Authentication Required!</h2>
         </div>
       </div>
     );
